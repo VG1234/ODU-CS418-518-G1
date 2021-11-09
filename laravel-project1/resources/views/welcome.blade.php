@@ -37,8 +37,8 @@
             @endif
 
             <div>
-                <h1 style="font-size:55px">Miss Information Survey Website</h1>
-                <p>Please do login or register to continue!</p>
+                <h1 style="font-size:55px">Falsity Survery Website</h1>
+                <p>Do login or register to continue!</p>
             </div>
 
             {{-- <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">

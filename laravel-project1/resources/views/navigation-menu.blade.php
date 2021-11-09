@@ -1,21 +1,21 @@
+<link rel="stylesheet" type="text/css" href="{{ url('/css/app.css') }}" />
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
+                <div class="flex-shrink-0 flex items-center" style="margin-top: 10px !important;">
                     <a href="{{ route('dashboard') }}">
                         {{-- <x-jet-application-mark class="block h-9 w-auto" /> --}}
                         <button>
                             {{-- <i class="material-icons">user</i> --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-15 w-10 mx-3" viewBox="0 0 20 20" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-15 w-15 mx-3" viewBox="0 0 20 20" fill="currentColor" style="margin-left: -50px;color: #59743a">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
                             </svg>
                         </button>
                     </a>
                 </div>
-
                 <!-- Navigation Links -->
                 {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('admin_dashboard')">
@@ -23,35 +23,32 @@
                     </x-jet-nav-link>
                 </div> --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-jet-nav-link href="{{ route('dashboard') }}" active="{{ (str_contains(url()->full(), '/article') or str_contains(url()->full(), '/articles')) ? 'active': '' }}">
+                        {{ __('Main Dashboard') }}
                     </x-jet-nav-link>
                 </div>
-                {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="" :active="request()->routeIs('snoopes')">
-                        {{ __('Snoopes') }}
-                    </x-jet-nav-link>
-                </div> --}}
                 @if (Auth::user()->role == '1')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
+                        <x-jet-nav-link href="{{ route('users.index') }}" active="{{ str_contains(url()->full(), '/users') ? 'active': '' }}">
                             Users
                         </x-jet-nav-link>
                     </div>
-                    
                 @endif
 
             </div>
 
             <!-- Search box-->
-            <div style="margin-left: auto;margin-top: 1%;">
-                <div class="shadow flex">
-                    <input class="w-full rounded p-2" type="text" placeholder="Search...">
-                    <button style="background-color: #a1d8ed" class="bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400">
-                        <i class="material-icons">search</i>
-                    </button>
+            <form action="{{ route('search') }}" style="margin-left:-19%">
+                <div style="margin-left: auto;margin-top: 4%; width: 172%;">
+                    <div class="flex">
+                        <input class="w-full rounded p-2" name="search" type="text" placeholder="Search by keyword..." value="{{ request('search') }}">
+                        <button style="background-color: #f3bf60" class="bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400" type="submit">
+                            <i class="material-icons">search</i>
+                            {{-- <a href="{{ route('users.index') }}" class="material-icons">Search</a> --}}
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </form>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
@@ -60,7 +57,7 @@
                         <x-jet-dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
+                                    <button  type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
                                         {{ Auth::user()->currentTeam->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

@@ -33,6 +33,7 @@ html {
 html {
 	line-height: 1.15; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
+	/* background-color: black; */
 }
 
 /*
@@ -46,6 +47,7 @@ Remove the margin in all browsers.
 
 body {
 	margin: 0;
+	/* background: black; */
 }
 
 /**
@@ -2253,3 +2255,17 @@ select {
 	}
 }
 
+
+.border-indigo-400 {
+    background-color: #e7b458 !important;
+}
+
+th.px-6.py-3.bg-gray-50.text-left.text-xs.font-medium.text-gray-500.uppercase.tracking-wider {
+	background-color: #e7b458 !important;
+	color: white !important;
+}
+
+button.inline-flex.items-center.px-3.py-2.border.border-transparent.text-sm.leading-4.font-medium.rounded-md.text-gray-500.bg-white.hover\:text-gray-700.focus\:outline-none.transition {
+	font-size: 17px !important;
+	color: #e90b1e !important;
+}
