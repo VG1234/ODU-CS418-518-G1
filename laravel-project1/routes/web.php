@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SearchController;
-use App\Http\Controllers\PanelController;
+use App\Http\Controllers\ArticleSearchController;
+use App\Http\Controllers\ArticlePanelController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\TokenController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
+
+// if (env('APP_ENV') === 'production') {
+//     URL::forceScheme('https');
+// }
 
 Route::get('/', function () {
     return view('welcome');
@@ -52,17 +58,23 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', \App\Http\Controllers\UsersController::class);
 });
 
-Route::get('/article', [SearchController::class, 'index'])->name('search');
+Route::get('/gettoken', [TokenController::class, 'index']);
+
+Route::get('/token/{tokenid}', [TokenController::class, 'getResults']);
+
+Route::get('/articlesearch', [ArticleSearchController::class, 'index'])->name('esearch');
 
 Route::get('/articles', [ArticleController::class, 'index']);
 
-Route::get('/article/{id}', [PanelController::class, 'index']);
+Route::get('/article/{id}', [ArticlePanelController::class, 'index']);
 
-Route::get('/article/{id}/dashboard', [PanelController::class, 'dashboard']);
+Route::get('/article/{id}/dashboard', [ArticlePanelController::class, 'dashboard']);
 
-Route::get('/article/{id}/snopes', [PanelController::class, 'dashboard']);
+Route::get('/article/{id}/snopes', [ArticlePanelController::class, 'dashboard']);
 
-Route::get('/article/{id}/survey', [PanelController::class, 'dashboard']);
+Route::get('/article/{id}/survey', [ArticlePanelController::class, 'dashboard']);
+
+Route::get('/article/{id}/updateSurveyDetails', [ArticlePanelController::class, 'updateSurveyDetails']);
 
 Route::get('/policy', function() {
     return view('policy');
@@ -75,3 +87,4 @@ Route::get('/policy', function() {
 // Route::get('/survey', function () {
 //     return view('dashboard');
 // })->name('survey');
+

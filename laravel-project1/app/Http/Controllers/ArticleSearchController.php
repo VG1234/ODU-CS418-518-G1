@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Elasticsearch\ClientBuilder; 
 use Illuminate\Support\Str;
 
-class SearchController extends Controller
+class ArticleSearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,25 +18,45 @@ class SearchController extends Controller
         $client = ClientBuilder::create()->build();
 
         $search = $request->input('search');
-        if($search === '' || Str::length($search) === 0) {
+        // $esearch = htmlspecialchars($search);
+        // $esearch = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $search);
+        $esearch = strip_tags($search);
+        // dd($esearch);
+        // dd($search);
+        if($esearch === '' || Str::length($esearch) === 0) {
             return redirect()->route('dashboard');
         }
         $params = [
-            'index' => 'articles',
+            'index' => 'articles1',
+            'explain' => true,
             'body'  => [
                 'query' => [
-                    'match' => [
-                        'title' => $search ?? ''
-                    ]
-                ]
+                    'multi_match' => [
+                        'query' => $esearch,
+                        'fuzziness' => 'AUTO',
+                        'fields' => ['title^5', 'descritpion'],
+                    ],
+                    ],
+                    'highlight' => [
+                        "pre_tags" => ["<mark>"],
+                        "post_tags" => ["</mark>"],
+                        "fields" => [
+                            "title" => new \stdClass(),
+                            "description" => new \stdClass()
+                        ],
+                        'require_field_match' => false
+                    ],
             ]
         ];
+
         $results = $client->search($params);
+        // dd($results['hits']);
         $count = $results['hits']['total']['value'];
         // dd($count);
         $response = $results['hits']['hits'];
+        // dd($response[0]['highlight']['description'][0]);
         // dd($response);
-        return view('search.maindashboard' ,compact('response','count'));
+        return view('search.maindashboard' ,compact('response','count','esearch'));
     }
 
     /**

@@ -3,7 +3,7 @@
         <x-slot name="logo">
             {{-- <x-jet-authentication-card-logo /> --}}
             <div style='display:block'>
-                <h1 style="font-size: 27px;font-weight:bold;color:#edab33;margin-left: -18%;">Register</h1>
+                <h1 style="font-size: 27px;font-weight:bold;color:#edab33;margin-left: -6%;">Register</h1>
                 <svg style="color: #59743a" xmlns="http://www.w3.org/2000/svg" class="h-15 w-20 m-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                 </svg>
@@ -64,3 +64,10 @@
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
+<div class="footer" style="background-color: #5a5a5c;">
+    <p style="color:#ede0e0"><b style="color: #85c240;">About ODU:</b> Old Dominion University, located in Norfolk, is Virginia's forward-focused public doctoral research university with more than 24,000 students, rigorous academics, an energetic residential community and initiatives that contribute $2.6 billion 
+        annually to Virginia's economy.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;
+        <b style="color: #85c240;text-decoration: underline" title="Click to know about project"><a href="{{ url('/projectinfo') }}">About Project</a></b><b style="color: #85c240;">&nbsp;&nbsp;&nbsp;Contact me: </b>gopal.hello12@gmail.com </p>
+</div>

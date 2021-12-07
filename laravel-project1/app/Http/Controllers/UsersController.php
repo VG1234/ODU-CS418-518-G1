@@ -78,7 +78,6 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-
         $user->name = $request->name;
         $user->verified_user = $request->verified_user;
         // $user->email = $request->email;

@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Falsity</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+<link rel="icon" type="image/x-icon" href="/img/favicon.png">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -37,7 +41,7 @@
             @endif
 
             <div>
-                <h1 style="font-size:55px">Falsity Survery Website</h1>
+                <h1 style="font-size:55px">Falsity Survey Website</h1>
                 <p>Do login or register to continue!</p>
             </div>
 
@@ -133,13 +137,22 @@
                 </div>
             </div> --}}
         </div>
-        <footer style="background-color: #5a5a5c;">
+        
+        <div class="footer" style="background-color: #5a5a5c;">
             <p style="color:#ede0e0"><b style="color: #85c240;">About ODU:</b> Old Dominion University, located in Norfolk, is Virginia's forward-focused public doctoral research university with more than 24,000 students, rigorous academics, an energetic residential community and initiatives that contribute $2.6 billion 
                 annually to Virginia's economy.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <b style="color: #85c240;text-decoration: underline" title="Click to know about project"><a href="{{ url('/projectinfo') }}">About Project</a></b>&nbsp;&nbsp;&nbsp;<b style="color: #85c240;">Contact me: </b>gopal.hello12@gmail.com </p>
-        </footer>
+        </div>
+        {{-- <footer style="background-color: #5a5a5c;">
+            <p style="color:#ede0e0"><b style="color: #85c240;">About ODU:</b> Old Dominion University, located in Norfolk, is Virginia's forward-focused public doctoral research university with more than 24,000 students, rigorous academics, an energetic residential community and initiatives that contribute $2.6 billion 
+                annually to Virginia's economy.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <b style="color: #85c240;text-decoration: underline" title="Click to know about project"><a href="{{ url('/projectinfo') }}">About Project</a></b>&nbsp;&nbsp;&nbsp;<b style="color: #85c240;">Contact me: </b>gopal.hello12@gmail.com </p>
+        </footer> --}}
     </body>
 </html>

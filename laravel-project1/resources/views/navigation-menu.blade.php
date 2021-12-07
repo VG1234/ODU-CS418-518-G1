@@ -1,3 +1,6 @@
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+<link rel="icon" type="image/x-icon" href="/img/favicon.png">
 <link rel="stylesheet" type="text/css" href="{{ url('/css/app.css') }}" />
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
@@ -30,7 +33,7 @@
                 @if (Auth::user()->role == '1')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('users.index') }}" active="{{ str_contains(url()->full(), '/users') ? 'active': '' }}">
-                            Users
+                            Users Dashboard
                         </x-jet-nav-link>
                     </div>
                 @endif
@@ -38,10 +41,17 @@
             </div>
 
             <!-- Search box-->
-            <form action="{{ route('search') }}" style="margin-left:-19%">
-                <div style="margin-left: auto;margin-top: 4%; width: 172%;">
+            <form action="{{ route('esearch') }}">
+                <div style="margin-left: auto;margin-top: 4%">
                     <div class="flex">
-                        <input class="w-full rounded p-2" name="search" type="text" placeholder="Search by keyword..." value="{{ request('search') }}">
+                        <input class="w-full rounded p-2" name="search" id= "textToSpeech" type="text" placeholder="Search by keyword..." value="{{ request('esearch') }}" onclick="speechToText()">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="margin-top: 8px;
+                        vertical-align: middle;
+                        color: red;
+                        width: 31px;
+                        margin-left: -23px;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                        </svg>
                         <button style="background-color: #f3bf60" class="bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400" type="submit">
                             <i class="material-icons">search</i>
                             {{-- <a href="{{ route('users.index') }}" class="material-icons">Search</a> --}}
@@ -247,3 +257,14 @@
         </div>
     </div>
 </nav>
+
+<script>
+    function speechToText() {
+        var recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-GB";
+        recognition.onresult = function(event) {
+            document.getElementById('textToSpeech').value = event.results[0][0].transcript;
+        }
+        recognition.start();
+    }
+</script>

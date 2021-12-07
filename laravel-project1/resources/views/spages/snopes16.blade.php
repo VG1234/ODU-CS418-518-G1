@@ -692,7 +692,7 @@ var snopes = {"core":{"host":"https:\/\/www.snopes.com","nonce":"04685c0cea","en
     <script type="text/javascript">
         smg.ads.load( 'post-body-1' );
     </script><div class="Placement">
-<zeus-ad id="zeus_post-body-1" data-adunitpath="/{{gamId}}/{{slotId}}" data-slot="/1005222/post-body-1" aria-hidden="true" data-renderbehavior="lazy" data-refresh="true" data-json="{&quot;targeting&quot;:{&quot;zeus_rendercount&quot;:&quot;1&quot;,&quot;zeus_slot&quot;:&quot;zeus_post-body-1.init.dsk&quot;}}" style="margin: auto; width: 1px; display: block;"></zeus-ad>
+
 </div>
 </div>
 </div></div></div>
@@ -711,7 +711,7 @@ var snopes = {"core":{"host":"https:\/\/www.snopes.com","nonce":"04685c0cea","en
     <script type="text/javascript">
         smg.ads.load( 'post-body-2' );
     </script><div class="Placement">
-<zeus-ad id="zeus_post-body-2" data-adunitpath="/{{gamId}}/{{slotId}}" data-slot="/1005222/post-body-2" aria-hidden="true" data-renderbehavior="lazy" data-refresh="true" data-json="{&quot;targeting&quot;:{&quot;zeus_rendercount&quot;:&quot;1&quot;,&quot;zeus_slot&quot;:&quot;zeus_post-body-2.init.dsk&quot;}}" style="margin: auto; width: 1px; display: block;"></zeus-ad>
+
 </div>
 </div>
 </div></div></div>
@@ -729,7 +729,7 @@ var snopes = {"core":{"host":"https:\/\/www.snopes.com","nonce":"04685c0cea","en
     <script type="text/javascript">
         smg.ads.load( 'post-body-3' );
     </script><div class="Placement">
-<zeus-ad id="zeus_post-body-3" data-adunitpath="/{{gamId}}/{{slotId}}" data-slot="/1005222/post-body-3" aria-hidden="true" data-renderbehavior="lazy" data-refresh="true" data-json="{&quot;targeting&quot;:{&quot;zeus_rendercount&quot;:&quot;1&quot;,&quot;zeus_slot&quot;:&quot;zeus_post-body-3.init.dsk&quot;}}" style="margin: auto; width: 1px; display: block;"></zeus-ad>
+
 </div>
 </div>
 </div></div></div>

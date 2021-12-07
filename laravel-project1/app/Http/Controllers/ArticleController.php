@@ -16,8 +16,10 @@ class ArticleController extends Controller
     {
         $client = ClientBuilder::create()->build();
 
+        $esearch = '';
         $params = [
-            'index' => 'articles',
+            'index' => 'articles1',
+            'size' => 100,
             'body'  => [
                 'query' => [
                     'match_all' => new \stdClass()
@@ -25,10 +27,9 @@ class ArticleController extends Controller
             ]
         ];
         $results = $client->search($params);
-        // dd($results);
         $count = $results['hits']['total']['value'];
         $response = $results['hits']['hits'];
-        return view('search.maindashboard' ,compact('response','count'));
+        return view('search.maindashboard' ,compact('response','count','esearch'));
     }
 
     /**
