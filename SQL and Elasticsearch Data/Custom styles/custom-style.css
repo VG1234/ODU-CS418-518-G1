@@ -1,0 +1,27 @@
+i.material-icons {
+	color: black !important;
+}
+
+.shadow-lg {
+    --tw-shadow: 0 0px 12px 6px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+a.inline-flex.items-center.px-1.pt-1.border-b-2.border-indigo-400.text-sm.font-medium.leading-5.text-gray-900.focus\:outline-none.focus\:border-indigo-700.transition {
+    background: #f1bf63 !important;
+}
+
+th.px-6.py-3.bg-gray-50.text-left.text-xs.font-medium.text-gray-500.uppercase.tracking-wider {
+    background: #dfa742 !important;
+    color: white !important;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
